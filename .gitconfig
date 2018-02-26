@@ -1,0 +1,46 @@
+[user]
+	name = Bjorn Burscher 
+	email = bburscher@gmail.com
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
+[alias]
+	a = add
+	amend = commit -a --amend
+	b = branch
+	ci = commit
+	cl = clone
+	co = checkout
+	cob = checkout -b
+	d = diff
+	dc = diff --cached
+        h = help
+	l = log --graph --abbrev-commit --author-date-order --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%ae%Creset'
+	m = merge
+        ps = push
+        pl = pull --rebase --prune
+	s = status
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	sh = show
+	st = status
+	submit = commit
+	undo = reset HEAD~1 --mixed
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+[diff]
+	tool = vimdiff
+[push]
+	default = simple
+[interactive]
+	diffFilter = diff-highlight
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
