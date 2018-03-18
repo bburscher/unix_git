@@ -1,4 +1,4 @@
-export TERM="xterm-256color"
+#export TERM="xterm-255color"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -21,6 +21,12 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 DEFAULT_USER=$USER
+POWERLEVEL9K_INSTALLATION_PATH="$ANTIGEN_BUNDLES/bhilburn/powerlevel9k"
+POWERLEVEL9K_DIR_HOME_FOREGROUND=015
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=015
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=015
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen apply
 
@@ -99,11 +105,18 @@ antigen apply
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-export EDITOR='mvim'
+export EDITOR='nvim'
 # fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# ruby-build
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

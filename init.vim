@@ -187,6 +187,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntacticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntactic_always_populate_loc_list = 1
 let g:syntactic_auto_loc_list = 1
 let g:syntactic_check_on_open = 1
@@ -293,4 +294,3 @@ nnoremap <Leader>gci            :Gcommit <CR>
 nnoremap <Leader>gv             :Gitv<CR>
 nnoremap <Leader>gV             :Gitv!<CR>
 nmap <Leader>gw                 <ESC>:call GitWhoDunnit()<CR>
-
